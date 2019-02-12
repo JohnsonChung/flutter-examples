@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// 沒有 return 的function 加上 void()
 void main() {
   runApp(new MaterialApp(
     home: new MyApp(),
@@ -10,7 +11,10 @@ void main() {
 
 class MyApp extends StatelessWidget {
   @override
+  // 還沒看過別的種類的Widget build 雖然不知道為什麼這麼寫先照用
   Widget build(BuildContext context) {
+    
+    // 不知道 Final 是什麼鬼
     // Declare some constants
     final double myTextSize = 30.0;
     final double myIconSize = 40.0;
@@ -52,7 +56,8 @@ class MyApp extends StatelessWidget {
             icon: new Icon(Icons.done, size: myIconSize, color: Colors.green)),
       ],
     );
-
+    
+    // 比較一般固定的外殼 和架子 所以把主要繁複內容的 column內容分開寫在上面
     return new Scaffold(
       appBar: new AppBar(
         title: new Text("Stateless Widget"),
@@ -69,11 +74,13 @@ class MyApp extends StatelessWidget {
   }
 }
 
+// 可以重複利用的 Class
 // Create a reusable stateless widget
 class MyCard extends StatelessWidget {
   final Widget icon;
   final Widget title;
-
+  
+  // 跟 javascript 的 constructor 一樣可以給object放進一些value或是可以執行的function在裡面
   // Constructor. {} here denote that they are optional values i.e you can use as: new MyCard()
   MyCard({this.title, this.icon});
 
